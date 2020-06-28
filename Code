@@ -1,0 +1,141 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Cespacial extends JFrame implements ActionListener {
+    private JLabel label1, label2, label3;
+    private JTextField texto;
+    private JButton b1, b2, b3, b4, b5, b6, b7, b8;
+
+    public Cespacial() {
+        setLayout(null);
+
+        label1 = new JLabel("Ingresa tu peso: ");
+        label1.setBounds(10, 10, 130, 30);
+        add(label1);
+
+        texto = new JTextField();
+        texto.setBounds(120, 10, 200, 30);
+        add(texto);
+
+        label2 = new JLabel("Tu peso es de: ");
+        label2.setBounds(10, 50, 300, 30);
+        add(label2);
+
+        label3 = new JLabel("Selecciona un planeta para calcular tu peso");
+        label3.setBounds(10, 90, 250, 30);
+        add(label3);
+
+        b1 = new JButton("MERCURIO");
+        b1.setBounds(10, 150, 100, 20);
+        add(b1);
+        b1.addActionListener(this);
+
+        b2 = new JButton("VENUS");
+        b2.setBounds(130, 150, 100, 20);
+        add(b2);
+        b2.addActionListener(this);
+
+        b3 = new JButton("TIERRA");
+        b3.setBounds(250, 150, 100, 20);
+        add(b3);
+        b3.addActionListener(this);
+
+        b4 = new JButton("MARTE");
+        b4.setBounds(370, 150, 100, 20);
+        add(b4);
+        b4.addActionListener(this);
+
+        b5 = new JButton("JUPITER");
+        b5.setBounds(10, 200, 100, 20);
+        add(b5);
+        b5.addActionListener(this);
+
+        b6 = new JButton("SATURNO");
+        b6.setBounds(130, 200, 100, 20);
+        add(b6);
+        b6.addActionListener(this);
+
+        b7 = new JButton("URANO");
+        b7.setBounds(250, 200, 100, 20);
+        add(b7);
+        b7.addActionListener(this);
+
+        b8 = new JButton("NEPTUNO");
+        b8.setBounds(370, 200, 100, 20);
+        add(b8);
+        b8.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == b1) {
+            double gravedad = 3.70;
+            double masa = Double.parseDouble(texto.getText());
+            double peso = masa * gravedad;
+            String pesoT = String.valueOf(peso); 
+            label2.setText("Tu peso en MERCURIO es de: " + pesoT);
+        }
+        
+        if (e.getSource() == b2) {
+            double gravedad = 8.87;
+            double masa = Double.parseDouble(texto.getText());
+            double peso = masa * gravedad;
+            String pesoT = String.valueOf(peso); 
+            label2.setText("Tu peso en VENUS es de: " + pesoT);
+        }
+
+        if (e.getSource() == b3) { 
+            label2.setText("Tu peso en la tierra es el mismo que introduciste");
+        }
+
+        if (e.getSource() == b4) {
+            double gravedad = 3.71;
+            double masa = Double.parseDouble(texto.getText());
+            double peso = masa * gravedad;
+            String pesoT = String.valueOf(peso); 
+            label2.setText("Tu peso en MARTE es de: " + pesoT);
+        }
+
+        if (e.getSource() == b5) {
+            double gravedad = 23.12;
+            double masa = Double.parseDouble(texto.getText());
+            double peso = masa * gravedad;
+            String pesoT = String.valueOf(peso); 
+            label2.setText("Tu peso en JUPITER es de: " + pesoT);
+        }
+
+        if (e.getSource() == b6) {
+            double gravedad = 8.96;
+            double masa = Double.parseDouble(texto.getText());
+            double peso = masa * gravedad;
+            String pesoT = String.valueOf(peso); 
+            label2.setText("Tu peso en SATURNO es de: " + pesoT);
+        }
+
+        if (e.getSource() == b7) {
+            double gravedad = 8.69;
+            double masa = Double.parseDouble(texto.getText());
+            double peso = masa * gravedad;
+            String pesoT = String.valueOf(peso); 
+            label2.setText("Tu peso en URANO es de: " + pesoT);
+        }
+
+        if (e.getSource() == b8) {
+            double gravedad = 11.00;
+            double masa = Double.parseDouble(texto.getText());
+            double peso = masa * gravedad;
+            String pesoT = String.valueOf(peso); 
+            label2.setText("Tu peso en NEPTUNO es de: " + pesoT);
+        }
+    }
+
+    public static void main(String args[]) {
+        Cespacial ventana = new Cespacial();
+
+        ventana.setVisible(true);
+        ventana.setBounds(0, 0, 550, 300);
+        ventana.setLocationRelativeTo(null);
+        ventana.setResizable(false);
+        ventana.setTitle("TU PESO EN OTROS PLANETAS");
+    }
+}
